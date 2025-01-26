@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
@@ -7,6 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const Navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,7 +19,8 @@ const Login = () => {
       });
 
       if (response.data.success) {
-        setSuccess(response.data.message); // Display success message
+        setSuccess(response.data.message);  // Display success message
+        Navigate("/homepage") 
         setError(""); // Clear any previous errors
         // Redirect or perform any additional actions here
       }
