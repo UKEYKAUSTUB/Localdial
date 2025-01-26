@@ -7,7 +7,10 @@ const User = require('./models/User');
 const cors=require('cors')
 
 const app = express();
-app.use(cors());
+app.use(cors({
+     origin: 'http://localhost:5173', // Allow requests from Vite dev server
+  credentials: true,              // Include credentials if needed
+}));
 app.use(express.json());
 
 const port = process.env.PORT || 4000;
