@@ -11,7 +11,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/auth/post", {
+      const response = await axios.post("https://localdial-lv6n.onrender.com", {
         name,
         email,
         password,
