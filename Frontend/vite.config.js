@@ -3,15 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-   server: {
-    port: 5173,
-    proxy: {
-      '/api': {
-        target: 'https://localdial-lv6n.onrender.com', // Backend URL
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  }, 
+  plugins: [react() , tailwindcss()],
+   
 });
